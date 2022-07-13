@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!--  estilos del showrun -->
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+        body   {
+        font-family: 'Dosis', sans-serif;
+        }
+        
+
+                /* class */
+                .ocultar {
+                    display: none;
+                }
+                .mostrar {
+                    display: block;
+                }
+
+                    .ocultar-elemento {
+                        display: none;
+                    }
+                    .mostrar-elemento {
+                        display: active;
+                    }
+
+                /* ################### paletGAME PC ################### */
+                    /*Pantalla del juego */
+                        .caja-relative-pantalla {
+                            position: relative;
+                            width: 100%;
+                            /* border: 3px solid #da2809; */
+                            right: auto;
+                            background-color: rgba(255, 255, 255, 0.582);
+                        } 
+                    
+                        .caja-absolute-pantalla {
+                            position: absolute;
+                            top: 10%;
+                            right: auto;
+                            /* border: 3px solid #98dd19; */
+                            width: auto;
+                        
+                        }
+                    
+                        .caja-relative-game{
+                            position: relative;
+                            width: auto;
+                            right: auto;
+                            height: 450px;
+                            /* border: 3px solid #394628; */
+                        } 
+                    /*Cierre de estilos de pantalla game*/
+
+
+                    /* Overview (vista previa de las combinaciones) */
+                        .caja-absolute-game {
+                            position: absolute;
+                            top: 0%;
+                            right: 35%;
+                            width: auto;
+                            height: auto;
+                            /* border: 3px solid #73AD21; */
+                        }
+
+                        .caja-absolute-game-cojin {
+                            position: absolute;
+                            top: 7%;
+                            right: 35%;
+                            /* border: 3px solid #73AD21; */
+                        }
+                    /* Cierre Overview (vista previa de las combinaciones) */
+                    
+                    /* Caja de los cojines */
+                        .caja-absolute-game-cojines{
+                            position: absolute;
+                            top: 0%;
+                            /* border:   3px solid #f50101; */
+                            left: 77%;
+                            right: 5%;
+                        }
+                    /* Cierre Caja de los cojines */
+
+
+                    /*Caja de las paletas*/
+                        .caja-absolute-game-paletas{
+                            position: absolute;
+                            top: 0%;
+                            left: 5%;
+                            right: 80%;
+                            /* border: 3px solid #73AD21; */
+                        }
+                    /*Cierre de cajs de las paletas*/
+                    
+                    /* FIN DEL JUEGO */
+
+                        /* JUEGO PARA MOVIL */
+
+                            /* LISTA DE PINTUTRAS DE LAS PALETAS */
+                            .activado-movil :hover{
+                                    border: 0.05em solid #000;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+                                
+                                .activado-movil :active {
+                                    border: 0.05em solid #0ecd4ed8;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+                                /* circulo */
+                                .circulo-paletas{
+                                    border-radius: 50%;
+                                    box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+                                    height: 40px;
+                                    width: 40px;
+                                }
+
+                                #caja-paleta{
+                                    text-align: center;
+                                    height: 100%;
+                                    width: 100%;
+                                    border: none;
+                                }
+                                /* LEYENDA DEL NOMBRE DE LA TELA O MADERA*/
+
+                                .cartel{
+                                    display:none;
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/cartel.png");
+                                    margin-top: -39%;
+                                    padding: 1%;
+                                    padding-top: 8px;
+                                    height: 45px;
+                                    width: 75px;
+                                    text-align: center;
+                                    color: aliceblue;
+                                    font-size: 11px;
+                                }
+                /* 
+                                .cartel{
+                                    display:none;
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/cartel.png");
+                                    position: absolute;
+                                    margin-top: -39%;
+                                    margin-left: -9%;
+                                    padding: 1%;
+                                    padding-top: 8px;
+                                    height: 45px;
+                                    width: 75px;
+                                    text-align: center;
+                                    color: aliceblue;
+                                    font-size: 11px;
+                                } */
+                                .cartel-cojin{
+                                    display:none;
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/cartel.png");
+                                    position: absolute;
+                                    margin-top: -29%;
+                                    margin-left: -7.5%;
+                                    padding: 1%;
+                                    padding-top: 8px;
+                                    height: 45px;
+                                    width: 75px;
+                                    text-align: center;
+                                    color: aliceblue;
+                                    font-size: 11px;
+                                }
+
+                                /* Esto hace que aparezca el CARTEL CON NOMBRE DE LA TELA O PINTURA*/
+                                a:hover + span{
+                                    display: block;                    
+                                }
+                                
+                                .color-roble-oscuro{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-roble-oscuro.png");
+                                }
+                                .color-alerce{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-alerce.png");
+                                }
+                                .color-caoba{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-caoba.png");
+                                }
+                                .color-cedro{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-cedro.png");
+                                }
+                                .color-cerezo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-cerezo.png");
+                                }
+                                .color-maple{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-maple.png");
+                                }
+                                .color-natural{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-natural.png");
+                                }
+                                .color-nogal-claro{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-nogal-claro.png");
+                                }
+                                .color-roble{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-roble.png");                  
+                                }   
+                            
+                            /* CIERRE DE LA LISTA DE LAS PALETAS*/
+
+                            /* LISTA DE COLORES DE TAPIZ */
+                            
+                            /* TAPIZ IMPERMEABLE */
+                                .imper-amarillo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-amarillo.png");          
+                                }
+                                .imper-amarillo-fluor{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-amarillo-fluor.png");  
+                                background-position-x: auto;       
+                                }
+                                .imper-azul-marino{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-azul-marino.png");  
+                                }
+                            
+                                .imper-azulino{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-azulino.png");  
+                                }
+
+                                .imper-gris-oscuro{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-gris-oscuro.png");  
+                                }
+                                .imper-gris-acero{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-gris-acero.png");  
+                                }
+                                .imper-blanco{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-blanco.png");  
+                                }
+                                .imper-rojo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-rojo.png");  
+                                }
+                                .imper-naranjo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-naranjo.png");  
+                                }
+                                .imper-naranjo-fluor{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-naranjo-fluor.png");  
+                                }
+                                .imper-mantequilla{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-mantequilla.png");  
+                                }
+                                .imper-negro{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-negro.png");  
+                                }
+                                .imper-verde-musgo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-verde-musgo.png");                   
+                                }   
+                            /* CIERRE TAPIZ IMPERMEABLE */
+
+                            /* TAPIZ ANAKENA */
+                                .anak-rojo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-rojo.png"); 
+                                }
+                                .anak-turqueza{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-turqueza.png"); 
+                                }
+                                .anak-pistacho{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-pistacho.png"); 
+                                }
+                                .anak-naranjo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-naranjo.png"); 
+                                }
+                                .anak-merengo{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-merengo.png"); 
+                                }
+                                .anak-gris-medio{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-gris-medio.png"); 
+                                }
+                                .anak-canela{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-canela.png"); 
+                                }
+                                .anak-beige{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-beige.png"); 
+                                }
+                                .anak-arena{
+                                    background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-arena.png"); 
+                                }   
+                            /* CIERRE TAPIZ IMPERMEABLE */
+
+                        
+                            /*Pantalla del juego */
+                            .caja-absolute-pantalla-movil {
+                                position: absolute;
+                                top: 10%;
+                                right: -15%;
+                                /* border: 3px solid #98dd19; */
+                                width: auto;
+                                height: auto;
+                            }
+
+                            .caja-relative-game-movil{
+                                position: relative;
+                                width: 75%;
+                                left: 14%;
+                                height: 450px;
+                                /* border: 3px solid #394628; */
+                            }  
+                        /*Cierre de estilos de pantalla game*/
+
+                    
+
+
+                /* PANTALLAS */
+                .ocultar-game-movil{
+                    display: none;
+                }
+                /* PANTALLA PARA MOVIL */
+                @media screen and (max-width: 1000px) {
+                    
+                    .ocultar-game-movil{
+                        display: block;
+                    }
+                    .ocultar-game-pc{
+                        display: none;
+                    }
+
+                    /* PALETA */
+                        .caja-absolute-game-movil {
+                            position: absolute;
+                            top: -6%;
+                            right: 3%;
+                            width: 100%;
+                        }
+                    /* COJIN */
+                        .caja-absolute-game-cojin-movil {
+                            position: absolute;
+                            top: 5%;
+                            right: 3%;
+                            width: 100%;
+                            /* border: 3px solid #73AD21; */
+                        }
+                
+                }
+
+                @media screen and (max-width: 990px) {
+                
+                    
+                    /* PALETA */
+                        .caja-absolute-game-movil {
+                            position: absolute;
+                            top: 2%;
+                            right: 3%;
+                            width: 85%;
+                        }
+
+                    /* COJIN */
+                        .caja-absolute-game-cojin-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: 3%;
+                            width: 85%;
+                            /* border: 3px solid #73AD21; */
+                        }
+                }
+
+
+                @media screen and (max-width: 768px) {
+                    
+                    /*paleta*/
+                        .caja-absolute-game-movil {
+                            position: absolute;
+                            top: 2.5%;
+                            right: 3%;
+                            width: 100%;
+                        }
+                    /*cojin*/
+                        .caja-absolute-game-cojin-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: 3%;
+                            width: 100%;
+                            /* border: 3px solid #73AD21; */
+                        }  
+                }
+
+                @media screen and (max-width: 540px) {
+                    /* color roble*/
+                
+                    
+
+                    /*Pantalla del juego */       
+                        .caja-absolute-pantalla-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: -15%;
+                            /* border: 3px solid #98dd19; */
+                            width: auto;
+                            height: auto;
+                        }
+
+                        .caja-relative-game-movil{
+                            position: relative;
+                            width: 75%;
+                            left: 14%;
+                            height: 300px;
+                            /* border: 3px solid #394628; */
+                        }  
+                    /* Cierre de pantalla */
+
+                    /*paleta*/
+                        .caja-absolute-game-movil {
+                            position: absolute;
+                            top: 2%;
+                            right: 3%;
+                            width: 100%;
+                        }
+
+                    /*cojin*/
+                        .caja-absolute-game-cojin-movil {
+                            position: absolute;
+                            top: 13%;
+                            right: 3%;
+                            width: 100%;
+                            /* border: 3px solid #73AD21; */
+                        }  
+                }
+
+                @media screen and (max-width: 414px) {
+                        
+                    /*Pantalla del juego */       
+                        .caja-absolute-pantalla-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: -15%;
+                            /* border: 3px solid #98dd19; */
+                            width: auto;
+                            height: auto;
+                        }
+
+                        .caja-relative-game-movil{
+                            position: relative;
+                            width: 75%;
+                            left: 14%;
+                            height: 250px;
+                            /* border: 3px solid #394628; */
+                        }  
+                    /* Cierre de pantalla */
+
+                    /*paleta*/
+                    .caja-absolute-game-movil {
+                        position: absolute;
+                        top: 2%;
+                        right: 3%;
+                        width: 100%;
+                    }
+
+                    /*cojin*/
+                    .caja-absolute-game-cojin-movil {
+                        position: absolute;
+                        top: 10%;
+                        right: 3%;
+                        width: 100%;
+                        /* border: 3px solid #73AD21; */
+                    }
+                }
+
+
+                @media screen and (max-width: 375px) {
+                    /*Pantalla del juego */       
+                        .caja-absolute-pantalla-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: -10%;
+                            /* border: 3px solid #98dd19; */
+                            width: auto;
+                            height: auto;
+                        }
+
+                        .caja-relative-game-movil{
+                            position: relative;
+                            width: 70%;
+                            left: 14%;
+                            height: 200px;
+                            /* border: 3px solid #394628; */
+                        }  
+                    /* Cierre de pantalla */
+
+                    /*paleta*/
+                        .caja-absolute-game-movil {
+                            position: absolute;
+                            top: 2%;
+                            right: 3%;
+                            width: 100%;
+                            /* border: 3px solid #162403; */
+                        }
+
+                    /*cojin*/
+                        .caja-absolute-game-cojin-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: 3%;
+                            width: 100%;
+                            /* border: 3px solid #73AD21; */
+                        }
+                }
+
+                @media screen and (max-width: 280px) {
+                    
+                    /* texto  tipo telas */
+                    #tipo-impermeable-movil{
+                        font-size: 10px;
+                    }
+                    #tipo-anakena-movil{
+                        font-size: 10px;
+                    }
+                    
+                    /*Pantalla del juego */       
+                        .caja-absolute-pantalla-movil {
+                            position: absolute;
+                            top: 10%;
+                            right: -15%;
+                            /* border: 3px solid #98dd19; */
+                            width: auto;
+                            height: auto;
+                        }
+
+                        .caja-relative-game-movil{
+                            position: relative;
+                            width: 75%;
+                            left: 14%;
+                            height: 150px;
+                            /* border: 3px solid #394628; */
+                        }  
+                    /* Cierre de pantalla */
+
+                        /*paleta*/
+                        .caja-absolute-game-movil {
+                            position: absolute;
+                            top: 2%;
+                            right: 3%;
+                            width: 100%;
+                        }
+
+                        /*cojin*/
+                            .caja-absolute-game-cojin-movil {
+                                position: absolute;
+                                top: 13%;
+                                right: 3%;
+                                width: 100%;
+                                /* border: 3px solid #73AD21; */
+                            }
+                        }
+
+
+
+    </style>
+
+  
+
+
+
+  
+</head>
+<body>
+    <!-- DISEÑA TU PROPIO PALETSTILO -->
+        <!-- EN PROCESO -->
+        <div class="col-12" >
+            <div class="row">
+            
+                
+
+                <!-- GAME VISTA TELEFONO MOLVIL -->
+                <div class="col-12 ">
+                    <div class="container">
+                        <div class="row">
+                            <!-- TITULO -->
+                            <div class="col-12 col-sm-4"></div>
+
+                            <div class="col-12 col-sm-12 text-center mt-3 mb-2 ">
+                               
+                                    <h2>
+                                        Crea tu propio Paletstilo 
+                                        <img src="https://paletstilo.cl/wp-content/uploads/imgShowrun/logo.png" class="img" width="45" height="45" alt="logo">
+                                    </h2>
+                                
+                            </div>
+
+                          
+
+                            <!-- PALETAS -->
+                                <div class="col-12 col-sm-3 mt-2 text-center">
+                                            
+                                    <div href="#Sillones" class="bg-dark text-white ">
+                                        PINTURAS DE MADERA
+                                    </div>
+                                    <!-- PINTURAS DE LAS PALETAS  -->
+                                    <div class="d-flex flex-wrap p-3 shadow-sm">
+                                                
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura1">
+                                                <a class="nav-link circulo-paletas color-roble-oscuro" id="robleOscuro"></a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Roble Oscuro</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura2">
+                                                <a class="nav-link circulo-paletas color-alerce" id="alerce"></a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Alerce</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura3">
+                                                <a class="nav-link circulo-paletas color-caoba" id="caoba"> </a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Caoba</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura4">
+                                                <a class="nav-link circulo-paletas color-cedro" id="cedro"> </a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Cedro</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura5">
+                                                <a class="nav-link circulo-paletas color-cerezo" id="cerezo"> </a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Cerezo</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura6">
+                                                <a class="nav-link circulo-paletas color-maple" id="maple"> </a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Maple</span>
+                                            </div>
+                                        </div>
+                                                
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura7">
+                                                <a class="nav-link circulo-paletas color-natural" id="natural"> </a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Natural</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura8">
+                                                <a class="nav-link circulo-paletas color-nogal-claro" id="nogalClaro"></a>     
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Nogal Claro</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-2 mt-3">
+                                            <div class="position-relative activado-movil" id="pintura9">
+                                                <a class="nav-link circulo-paletas color-roble" id="roble"></a>
+                                                <span class="cartel position-absolute top-0 start-50 translate-middle">Roble</span>
+                                            </div>
+                                        </div>      
+                                    </div>
+
+                                   
+                                </div>
+                               
+                                <!-- VISTA PREVIA -->
+                                    <div class="col-12 col-sm-6 mt-2 text-center">
+                                        <div class="m-4 bg-white position-relative">
+                                            <img src="https://paletstilo.cl/wp-content/uploads/imgShowrun/robleOscuro/aMarengo.png" width="95%" height="95%" alt="PALETSTILO" class="img" id="paletstilo">
+                                            <span class="mt-2 position-absolute top-100 end-0 translate-middle"><b>*Imagen de referencia</b></span>
+                                        </div>
+
+                                        <div class="p-1 mt-5 border border-dark rounded rounded shadow-sm" id="nombreDeCombinacion">
+                                            <h4>Tu elección: Roble Oscuro / Tapíz Marengo</h4>
+                                        </div> 
+
+                                    </div>
+
+                            <!-- TELAS -->
+                                <div class="col-12 col-sm-3 mt-2 text-center">
+                                
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12"> 
+                                                <div href="#telas" class="text-white bg-dark mb-2 ">
+                                                    TIPOS DE TELAS
+                                                </div>  
+                                            </div>
+                                            
+                                            <div class="col-12 col-sm-6 btn text-warning bg-dark" id="tipo-impermeable-movil" >
+                                                IMPERMEABLE
+
+                                            </div>
+                                            <div class="col-12 col-sm-6 btn " id="tipo-anakena-movil">
+                                                ANAKENA
+                                            </div>
+                                        
+                                       
+                                        
+                                            <!-- TAPIZ IMPERMIABLE -->
+                                            <div id="lista-cojin-impermeable-movil">
+                                                <div class="d-flex flex-wrap p-3 shadow-sm" >
+                                                            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz1">
+                                                            <a class="nav-link circulo-paletas imper-amarillo" id="iAmarillo"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Amarillo</span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil " id="tapiz2">
+                                                            <a class="nav-link circulo-paletas imper-amarillo-fluor" id="iAmarilloFluor"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Amarillo fluor</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil " id="tapiz3">
+                                                            <a class="nav-link circulo-paletas imper-azulino" id="iAzulino"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Azulino</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil " id="tapiz4">
+                                                            <a class="nav-link circulo-paletas imper-azul-marino" id="iAzulMarino"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Azul Marino</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil"  id="tapiz5">
+                                                            <a class="nav-link circulo-paletas imper-blanco" id="iBlanco"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Blanco</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz6">
+                                                            <a class="nav-link circulo-paletas imper-gris-oscuro" id="iGrisOscuro"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Gris Oscuro</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz7">
+                                                            <a class="nav-link circulo-paletas imper-gris-acero" id="iGrisAcero"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Gris Acero</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz8">
+                                                            <a class="nav-link circulo-paletas imper-mantequilla"  id="iMantequilla"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Mantequilla</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz9">
+                                                            <a class="nav-link circulo-paletas imper-verde-musgo" id="iMusgo"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Verde Musgo</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz10">
+                                                            <a class="nav-link circulo-paletas imper-naranjo" id="iNaranjo"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Naranjo</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz11">
+                                                            <a class="nav-link circulo-paletas imper-naranjo-fluor" id="iNaranjoFluor"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Naranjo Fluor</span>
+                                                        </div>
+                                                    </div>
+                                                            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz12">
+                                                            <a class="nav-link circulo-paletas imper-negro" id="iNegro"></a>     
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Negro</span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz13">
+                                                            <a class="nav-link circulo-paletas imper-rojo"  id="iRojo"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Rojo</span>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+        
+                                            <!-- TAPIZ ANAKENA  -->
+                                            <div  id="lista-cojin-anakena-movil" style="display: none;">
+        
+                                                <div class="d-flex flex-wrap p-3 shadow-sm "  >
+                                                            
+                                                    <div class="p-2 mt-3" >   
+                                                        <div class="position-relative activado-movil" id="tapiz14">
+                                                            <a class="nav-link circulo-paletas anak-rojo" id="aRojo"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Rojo</span>
+                                                        </div>
+        
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz15">
+                                                            <a class="nav-link circulo-paletas anak-turqueza" id="aTurqueza"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Turqueza</span>
+                                                        </div>
+        
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz16">
+                                                            <a class="nav-link circulo-paletas anak-pistacho" id="aPistacho"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Pistacho</span>
+                                                        </div>
+        
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz17">
+                                                            <a class="nav-link circulo-paletas anak-naranjo" id="aNaranjo"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Naranjo</span>
+                                                        </div>
+        
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz18">
+                                                            <a class="nav-link circulo-paletas anak-merengo"  id="aMarengo"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Marengo</span>
+                                                        </div>
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz19">
+                                                            <a class="nav-link circulo-paletas anak-gris-medio" id="aGrisMedio"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Gris Medio</span>
+                                                        </div>
+        
+                                                    </div>
+                                                            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz20">
+                                                            <a class="nav-link circulo-paletas anak-canela"  id="aCanela"> </a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Canela</span>
+                                                        </div>
+        
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz21">
+                                                            <a class="nav-link circulo-paletas anak-beige" id="aBeige"></a>     
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Beige</span>
+                                                        </div>
+        
+                                                    </div>
+            
+                                                    <div class="p-2 mt-3">
+                                                        <div class="position-relative activado-movil" id="tapiz22">
+                                                            <a class="nav-link circulo-paletas anak-arena" id="aArena"></a>
+                                                            <span class="cartel position-absolute top-0 start-50 translate-middle">Arena</span>
+                                                        </div>
+        
+                                                    </div>      
+                                                </div>
+                                            </div>  
+
+                                        </div>
+                                    </div>            
+                                 
+
+                                </div>
+                            
+                       
+                                
+
+                        </div>
+                    </div>                               
+                </div>
+  
+        
+            </div>
+        </div>
+        <!-- CIERRE DEL SHOWRUN -->
+
+
+          <!-- acciones del juego del showrun -->
+    <script>
+        
+        /**
+         * @param JUEGO_PALETSTILO
+         * 
+         * CONSISTE EN CAMBIAR LOS COLORES DE LAS PALETAS Y LOS COJINES PARA 
+         * CREAR TU PROPIO PALETSTILO PERSONALIZADO
+         */
+
+                
+            // Cierre Tapiz Anakena
+
+            let url =  'https://paletstilo.cl/wp-content/uploads/imgShowrun/robleOscuro/'
+            let nombreCombinacion = 'Roble Oscuro'
+            //paletas
+                
+                document.getElementById("pintura1").addEventListener("click", function displayImg() {
+                    
+                    colorDePintura = document.querySelector("#pintura1")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Roble Oscuro', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+
+                });
+
+                document.getElementById("pintura2").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura2")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Alerce', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+
+                });
+                document.getElementById("pintura3").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura3")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Caoba', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+
+                });
+                document.getElementById("pintura4").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura4")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Cedro', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+
+                });
+                document.getElementById("pintura5").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura5")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Cerezo', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+
+                });
+                document.getElementById("pintura6").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura6")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Maple', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+
+                });
+                document.getElementById("pintura7").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura7")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Natural', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+                });
+                document.getElementById("pintura8").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura8")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Nogal Claro', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+                });
+                document.getElementById("pintura9").addEventListener("click", function displayImg() {
+                    colorDePintura = document.querySelector("#pintura9")
+                    color = colorDePintura.children
+                    pintar = color[0].id
+                    //agregar text
+                    agregarNombreDecombinaciones('Tu elección: Roble', 1)
+                    document.getElementById("paletstilo").src = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/sillon/' + pintar + '.png'
+                    return url = 'https://paletstilo.cl/wp-content/uploads/imgShowrun/' + pintar + '/'
+                });
+            // Cierre paleta
+
+            // TAPIZ
+                document.getElementById("tapiz1").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz1")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Amarillo', 0)
+                    url += tapizar + '.png'
+                    img = document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz2").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz2")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Amarillo Fluor', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz3").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz3")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Azulino', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz4").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz4")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Azul Marino', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz5").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz5")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Blanco', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz6").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz6")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Gris Oscuro', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz7").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz7")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Gris Acero', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz8").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz8")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Mantequilla', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz9").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz9")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Verde Musgo', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz10").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz10")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Naranjo', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz11").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz11")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Naranjo Fluor', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz12").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz12")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Negro', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz13").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz13")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Rojo', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz14").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz14")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Rojo', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz15").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz15")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Turqueza', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz16").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz16")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Pistacho', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz17").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz17")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Naranjo', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz18").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz18")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Marengo', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz19").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz19")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Gris Medio', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz20").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz20")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Canela', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+
+                document.getElementById("tapiz21").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz21")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Imper. Beige', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+                document.getElementById("tapiz22").addEventListener("click", function displayImg() {
+                    let colorDeTapiz = document.querySelector("#tapiz22")
+                    let color = colorDeTapiz.children
+                    let tapizar = color[0].id
+                    let urlPintura = url
+                    //agregar text
+                    agregarNombreDecombinaciones('Tapíz Anak. Arena', 0)
+                    url += tapizar + '.png'
+                    document.getElementById("paletstilo").src = url
+                    return url =  urlPintura
+                });
+            // CIERRE TAPIZ
+        
+        
+   
+
+
+    
+
+
+        // display de las listas de los cojines
+
+        // Botones para seleccionar tipo de tela 
+            document.getElementById("tipo-impermeable-movil").addEventListener("click", function displayImg() {
+                document.getElementById('lista-cojin-impermeable-movil').style = "display:block;"
+                document.getElementById('lista-cojin-anakena-movil').style = "display:none;"
+                document.getElementById('tipo-impermeable-movil').classList.add("bg-dark")
+                document.getElementById('tipo-impermeable-movil').classList.add("shadow-sm")
+                document.getElementById('tipo-impermeable-movil').classList.add("text-warning")
+                document.getElementById('tipo-anakena-movil').classList.remove("bg-dark")
+                document.getElementById('tipo-anakena-movil').classList.remove("shadow-sm")
+                document.getElementById('tipo-anakena-movil').classList.remove("text-warning")
+                return
+            });
+
+            document.getElementById("tipo-anakena-movil").addEventListener("click", function displayImg() {
+                document.getElementById('lista-cojin-impermeable-movil').style = "display:none"
+                document.getElementById('lista-cojin-anakena-movil').style = "display:block"
+                document.getElementById('tipo-anakena-movil').classList.add("bg-dark")
+                document.getElementById('tipo-anakena-movil').classList.add("shadow-sm")
+                document.getElementById('tipo-anakena-movil').classList.add("text-warning")
+                document.getElementById('tipo-impermeable-movil').classList.remove("bg-dark")
+                document.getElementById('tipo-impermeable-movil').classList.remove("shadow-sm")
+                document.getElementById('tipo-impermeable-movil').classList.remove("text-warning")
+                return
+            });
+        // Cierre Botones para seleccionar tipo de tela 
+
+        
+
+        // Funciones helper
+        const subtraerTexto = texto => {
+            let textoListo = texto.slice(0,texto.length - 10)
+            return textoListo + '.png'
+        }
+
+
+        //agregar nombres de las combinaciones
+        const agregarNombreDecombinaciones = (nombre, accion) => {
+            if (accion == 1) {
+                //texto PINTURA
+                let com = document.querySelector("#nombreDeCombinacion")
+                let combi = com.children
+                nombreCombinacion = combi[0].innerHTML = `${nombre}`
+            }else{
+                 // texto TAPIZ    
+                let com = document.querySelector("#nombreDeCombinacion")
+                let combi = com.children
+                combi[0].innerHTML = `${nombreCombinacion} / ${nombre}`
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+
+            
