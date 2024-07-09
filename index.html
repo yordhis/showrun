@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Js -->
+    <script src="./js/crearPaletstilo.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- TITULO -->
+            <div class="col-12 my-5">
+                <div class="d-flex justify-content-center">
+                    <h1>Diseña tu propio Paletstilo </h1>
+                    <img src="./imgShowrun/logo.png" class="img mx-2" width="60" height="50" alt="">
+                </div>
+            </div>
+
+            <!-- PINTURAS DE MADERAS  -->
+            <div class="col-sm-3 col-xs-12">
+                <div class="card">
+                    <div class="card-header text-center text-warning bg-black fs-5">
+                        PINTURAS DE PALETAS
+                    </div>
+
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap justify-content-center" id="pinturas_maderas">
+                            
+                            <!-- Aqui se cargan las pinturas -->
+                           
+                        </div>
+                    </div>
+                    <div class="card-footer bg-black">
+                        <p class="text-warning text-center" id="color_paleta"></p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREVIEW DEL PALETSTILO -->
+            <div class="col-sm-6 col-xs-12">
+                <figure class="figure">
+                    <span id="preload_figure"></span>
+                    <img src="./imgShowrun/impermeables/alerce/gris_oscuro.png" class="figure-img img-fluid rounded px-lg-5" alt="preview" id="preview">
+                    <figcaption class="figure-caption fs-4 text-end text-black">*Imagen de referencia</figcaption>
+                </figure>
+            </div>
+
+            <!-- COLORES DE TAPIZ  -->
+            <div class="col-sm-3 col-xs-12">
+                <div class="card" >
+                    <div class="card-header text-warning text-center text-warning bg-black fs-5">
+                        TIPOS DE TAPIZ 
+                    </div>
+
+                    <div class="btn-group " role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle rounded-0" data-bs-toggle="dropdown" aria-expanded="false">
+                          SELECCIONE UN TAPIZ
+                        </button>
+                        <ul class="dropdown-menu " aria-labelledby="btnGroupDrop1">
+                          <li><a class="dropdown-item text-dark link_tapices" href="#" id="algodon">ALGODÓN</a></li>
+                          <li><a class="dropdown-item text-dark link_tapices" href="#" id="impermeable">IMPERMEABLE</a></li>
+                          <!-- <li><a class="dropdown-item text-dark link_tapices" href="#" id="anakena">ANAKENA</a></li> -->
+                          <li><a class="dropdown-item text-dark link_tapices" href="#" id="soft">SOFT</a></li>
+                        </ul>
+                      </div>
+
+                    <div class="card-body d-flex flex-wrap justify-content-center" id="lista_tapices">
+
+                    </div>
+                    <div class="card-footer bg-black">
+                        <p class="text-warning text-center fs-5" id="nombre_tipo_tapiz"></p>
+                        <p class="text-warning text-center " id="color_tapiz"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOMBRE DE LA COMBINACIÓN -->
+            <div class="col-12">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-success m-0">Resultado de tu diseño</p>
+                        <p class="fs-4" id="mi_disenio"> PALETA ALERCE + TAPIZ IMPERMEABLE GRIS OSCURO</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      La imaginación <cite title="Source Title">No tiene limites</cite>
+                    </figcaption>
+                  </figure>
+            </div>
+
+            <!-- WHATSAPP -->
+            <div class="col-12 text-center">
+                <a href="" class="btn btn-outline-success" id="realizar_pedido_whatsapp" target="_blank">¡lo quiero! Enviar al Whatsapp mi diseño</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

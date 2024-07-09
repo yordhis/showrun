@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+body   {
+font-family: 'Dosis', sans-serif;
+}
+
+
+        /* class */
+        .ocultar {
+            display: none;
+        }
+        .mostrar {
+            display: block;
+        }
+
+            .ocultar-elemento {
+                display: none;
+            }
+            .mostrar-elemento {
+                display: active;
+            }
+
+        /* ################### paletGAME PC ################### */
+            /*Pantalla del juego */
+                .caja-relative-pantalla {
+                    position: relative;
+                    width: 100%;
+                    /* border: 3px solid #da2809; */
+                    right: auto;
+                    background-color: rgba(255, 255, 255, 0.582);
+                } 
+            
+                .caja-absolute-pantalla {
+                    position: absolute;
+                    top: 10%;
+                    right: auto;
+                    /* border: 3px solid #98dd19; */
+                    width: auto;
+                
+                }
+            
+                .caja-relative-game{
+                    position: relative;
+                    width: auto;
+                    right: auto;
+                    height: 450px;
+                    /* border: 3px solid #394628; */
+                } 
+            /*Cierre de estilos de pantalla game*/
+
+
+            /* Overview (vista previa de las combinaciones) */
+                .caja-absolute-game {
+                    position: absolute;
+                    top: 0%;
+                    right: 35%;
+                    width: auto;
+                    height: auto;
+                    /* border: 3px solid #73AD21; */
+                }
+
+                .caja-absolute-game-cojin {
+                    position: absolute;
+                    top: 7%;
+                    right: 35%;
+                    /* border: 3px solid #73AD21; */
+                }
+            /* Cierre Overview (vista previa de las combinaciones) */
+            
+            /* Caja de los cojines */
+                .caja-absolute-game-cojines{
+                    position: absolute;
+                    top: 0%;
+                    /* border:   3px solid #f50101; */
+                    left: 77%;
+                    right: 5%;
+                }
+            /* Cierre Caja de los cojines */
+
+
+            /*Caja de las paletas*/
+                .caja-absolute-game-paletas{
+                    position: absolute;
+                    top: 0%;
+                    left: 5%;
+                    right: 80%;
+                    /* border: 3px solid #73AD21; */
+                }
+            /*Cierre de cajs de las paletas*/
+            
+            /* FIN DEL JUEGO */
+
+                /* JUEGO PARA MOVIL */
+
+                    /* LISTA DE PINTUTRAS DE LAS PALETAS */
+                    .activado-movil :hover{
+                            border: 0.05em solid #000;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                        
+                        .activado-movil :active {
+                            border: 0.05em solid #0ecd4ed8;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                        /* circulo */
+                        .circulo-paletas{
+                            border-radius: 50%;
+                            box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+                            height: 40px;
+                            width: 40px;
+                        }
+
+                        #caja-paleta{
+                            text-align: center;
+                            height: 100%;
+                            width: 100%;
+                            border: none;
+                        }
+                        /* LEYENDA DEL NOMBRE DE LA TELA O MADERA*/
+
+                        .cartel{
+                            display:none;
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/cartel.png");
+                            margin-top: -39%;
+                            padding: 1%;
+                            padding-top: 8px;
+                            height: 45px;
+                            width: 75px;
+                            text-align: center;
+                            color: aliceblue;
+                            font-size: 11px;
+                        }
+        /* 
+                        .cartel{
+                            display:none;
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/cartel.png");
+                            position: absolute;
+                            margin-top: -39%;
+                            margin-left: -9%;
+                            padding: 1%;
+                            padding-top: 8px;
+                            height: 45px;
+                            width: 75px;
+                            text-align: center;
+                            color: aliceblue;
+                            font-size: 11px;
+                        } */
+                        .cartel-cojin{
+                            display:none;
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/cartel.png");
+                            position: absolute;
+                            margin-top: -29%;
+                            margin-left: -7.5%;
+                            padding: 1%;
+                            padding-top: 8px;
+                            height: 45px;
+                            width: 75px;
+                            text-align: center;
+                            color: aliceblue;
+                            font-size: 11px;
+                        }
+
+                        /* Esto hace que aparezca el CARTEL CON NOMBRE DE LA TELA O PINTURA*/
+                        a:hover + span{
+                            display: block;                    
+                        }
+                        
+                        .color-roble-oscuro{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-roble-oscuro.png");
+                        }
+                        .color-alerce{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-alerce.png");
+                        }
+                        .color-caoba{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-caoba.png");
+                        }
+                        .color-cedro{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-cedro.png");
+                        }
+                        .color-cerezo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-cerezo.png");
+                        }
+                        .color-maple{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-maple.png");
+                        }
+                        .color-natural{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-natural.png");
+                        }
+                        .color-nogal-claro{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-nogal-claro.png");
+                        }
+                        .color-roble{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/pintura-paleta-roble.png");                  
+                        }   
+                    
+                    /* CIERRE DE LA LISTA DE LAS PALETAS*/
+
+                    /* LISTA DE COLORES DE TAPIZ */
+                    
+                    /* TAPIZ IMPERMEABLE */
+                        .imper-amarillo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-amarillo.png");          
+                        }
+                        .imper-amarillo-fluor{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-amarillo-fluor.png");  
+                        background-position-x: auto;       
+                        }
+                        .imper-azul-marino{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-azul-marino.png");  
+                        }
+                    
+                        .imper-azulino{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-azulino.png");  
+                        }
+
+                        .imper-gris-oscuro{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-gris-oscuro.png");  
+                        }
+                        .imper-gris-acero{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-gris-acero.png");  
+                        }
+                        .imper-blanco{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-blanco.png");  
+                        }
+                        .imper-rojo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-rojo.png");  
+                        }
+                        .imper-naranjo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-naranjo.png");  
+                        }
+                        .imper-naranjo-fluor{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-naranjo-fluor.png");  
+                        }
+                        .imper-mantequilla{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-mantequilla.png");  
+                        }
+                        .imper-negro{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-negro.png");  
+                        }
+                        .imper-verde-musgo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-imper-verde-musgo.png");                   
+                        }   
+                    /* CIERRE TAPIZ IMPERMEABLE */
+
+                    /* TAPIZ ANAKENA */
+                        .anak-rojo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-rojo.png"); 
+                        }
+                        .anak-turqueza{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-turqueza.png"); 
+                        }
+                        .anak-pistacho{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-pistacho.png"); 
+                        }
+                        .anak-naranjo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-naranjo.png"); 
+                        }
+                        .anak-merengo{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-merengo.png"); 
+                        }
+                        .anak-gris-medio{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-gris-medio.png"); 
+                        }
+                        .anak-canela{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-canela.png"); 
+                        }
+                        .anak-beige{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-beige.png"); 
+                        }
+                        .anak-arena{
+                            background-image: url("https://paletstilo.cl/wp-content/uploads/imgShowrun/tela-anak-arena.png"); 
+                        }   
+                    /* CIERRE TAPIZ IMPERMEABLE */
+
+                
+                    /*Pantalla del juego */
+                    .caja-absolute-pantalla-movil {
+                        position: absolute;
+                        top: 10%;
+                        right: -15%;
+                        /* border: 3px solid #98dd19; */
+                        width: auto;
+                        height: auto;
+                    }
+
+                    .caja-relative-game-movil{
+                        position: relative;
+                        width: 75%;
+                        left: 14%;
+                        height: 450px;
+                        /* border: 3px solid #394628; */
+                    }  
+                /*Cierre de estilos de pantalla game*/
+
+            
+
+
+        /* PANTALLAS */
+        .ocultar-game-movil{
+            display: none;
+        }
+        /* PANTALLA PARA MOVIL */
+        @media screen and (max-width: 1000px) {
+            
+            .ocultar-game-movil{
+                display: block;
+            }
+            .ocultar-game-pc{
+                display: none;
+            }
+
+            /* PALETA */
+                .caja-absolute-game-movil {
+                    position: absolute;
+                    top: -6%;
+                    right: 3%;
+                    width: 100%;
+                }
+            /* COJIN */
+                .caja-absolute-game-cojin-movil {
+                    position: absolute;
+                    top: 5%;
+                    right: 3%;
+                    width: 100%;
+                    /* border: 3px solid #73AD21; */
+                }
+        
+        }
+
+        @media screen and (max-width: 990px) {
+        
+            
+            /* PALETA */
+                .caja-absolute-game-movil {
+                    position: absolute;
+                    top: 2%;
+                    right: 3%;
+                    width: 85%;
+                }
+
+            /* COJIN */
+                .caja-absolute-game-cojin-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: 3%;
+                    width: 85%;
+                    /* border: 3px solid #73AD21; */
+                }
+        }
+
+
+        @media screen and (max-width: 768px) {
+            
+            /*paleta*/
+                .caja-absolute-game-movil {
+                    position: absolute;
+                    top: 2.5%;
+                    right: 3%;
+                    width: 100%;
+                }
+            /*cojin*/
+                .caja-absolute-game-cojin-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: 3%;
+                    width: 100%;
+                    /* border: 3px solid #73AD21; */
+                }  
+        }
+
+        @media screen and (max-width: 540px) {
+            /* color roble*/
+        
+            
+
+            /*Pantalla del juego */       
+                .caja-absolute-pantalla-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: -15%;
+                    /* border: 3px solid #98dd19; */
+                    width: auto;
+                    height: auto;
+                }
+
+                .caja-relative-game-movil{
+                    position: relative;
+                    width: 75%;
+                    left: 14%;
+                    height: 300px;
+                    /* border: 3px solid #394628; */
+                }  
+            /* Cierre de pantalla */
+
+            /*paleta*/
+                .caja-absolute-game-movil {
+                    position: absolute;
+                    top: 2%;
+                    right: 3%;
+                    width: 100%;
+                }
+
+            /*cojin*/
+                .caja-absolute-game-cojin-movil {
+                    position: absolute;
+                    top: 13%;
+                    right: 3%;
+                    width: 100%;
+                    /* border: 3px solid #73AD21; */
+                }  
+        }
+
+        @media screen and (max-width: 414px) {
+                
+            /*Pantalla del juego */       
+                .caja-absolute-pantalla-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: -15%;
+                    /* border: 3px solid #98dd19; */
+                    width: auto;
+                    height: auto;
+                }
+
+                .caja-relative-game-movil{
+                    position: relative;
+                    width: 75%;
+                    left: 14%;
+                    height: 250px;
+                    /* border: 3px solid #394628; */
+                }  
+            /* Cierre de pantalla */
+
+            /*paleta*/
+            .caja-absolute-game-movil {
+                position: absolute;
+                top: 2%;
+                right: 3%;
+                width: 100%;
+            }
+
+            /*cojin*/
+            .caja-absolute-game-cojin-movil {
+                position: absolute;
+                top: 10%;
+                right: 3%;
+                width: 100%;
+                /* border: 3px solid #73AD21; */
+            }
+        }
+
+
+        @media screen and (max-width: 375px) {
+            /*Pantalla del juego */       
+                .caja-absolute-pantalla-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: -10%;
+                    /* border: 3px solid #98dd19; */
+                    width: auto;
+                    height: auto;
+                }
+
+                .caja-relative-game-movil{
+                    position: relative;
+                    width: 70%;
+                    left: 14%;
+                    height: 200px;
+                    /* border: 3px solid #394628; */
+                }  
+            /* Cierre de pantalla */
+
+            /*paleta*/
+                .caja-absolute-game-movil {
+                    position: absolute;
+                    top: 2%;
+                    right: 3%;
+                    width: 100%;
+                    /* border: 3px solid #162403; */
+                }
+
+            /*cojin*/
+                .caja-absolute-game-cojin-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: 3%;
+                    width: 100%;
+                    /* border: 3px solid #73AD21; */
+                }
+        }
+
+        @media screen and (max-width: 280px) {
+            
+            /* texto  tipo telas */
+            #tipo-impermeable-movil{
+                font-size: 10px;
+            }
+            #tipo-anakena-movil{
+                font-size: 10px;
+            }
+            
+            /*Pantalla del juego */       
+                .caja-absolute-pantalla-movil {
+                    position: absolute;
+                    top: 10%;
+                    right: -15%;
+                    /* border: 3px solid #98dd19; */
+                    width: auto;
+                    height: auto;
+                }
+
+                .caja-relative-game-movil{
+                    position: relative;
+                    width: 75%;
+                    left: 14%;
+                    height: 150px;
+                    /* border: 3px solid #394628; */
+                }  
+            /* Cierre de pantalla */
+
+                /*paleta*/
+                .caja-absolute-game-movil {
+                    position: absolute;
+                    top: 2%;
+                    right: 3%;
+                    width: 100%;
+                }
+
+                /*cojin*/
+                    .caja-absolute-game-cojin-movil {
+                        position: absolute;
+                        top: 13%;
+                        right: 3%;
+                        width: 100%;
+                        /* border: 3px solid #73AD21; */
+                    }
+                }
